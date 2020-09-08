@@ -1,0 +1,16 @@
+#!/bin/bash
+
+TOP_CWD=$(pwd | rev | cut -d '/' -f1 | rev)
+GIT_LOC=(git@github.com:isaiahstjohn/${TOP_CWD}.git)
+
+git init
+git remote add origin "${GIT_LOC[@]}" 
+git pull origin master
+touch deleteme
+git add .
+git commit -m "ignore"
+git push --set-upstream origin master
+rm deleteme
+git add .
+git commit -m "ignore"
+git push

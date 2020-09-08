@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Copy scripts from ~/sbin to /usr/local/sbin,
+# change ownership and group to root,
+# and set appropriate permissions
+# Run script as root
+
+shopt -s extglob
+cp -r sbin/!(.git) /usr/local/sbin
+
