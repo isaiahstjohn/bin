@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Create new projects on GitHub first, then call
+# `gitgoing your-project-name` in the directory where you want the
+# local project directory to live. 
+# 
+# SSH authentication must be in place.
+
+GIT_USER="isaiahstjohn"
+
+mkdir $1
+cd $1
+git init
+git remote add origin git@github.com:${GIT_USER}/$1.git 
+git pull origin master
+git push --set-upstream origin master
