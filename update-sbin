@@ -6,5 +6,5 @@
 # Run script as root
 
 shopt -s extglob
-cp -r sbin/!(.git) /usr/local/sbin
+cp -r sbin/!(.git|LICENSE) /usr/local/sbin
 
